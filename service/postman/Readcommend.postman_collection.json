@@ -1,0 +1,383 @@
+{
+	"info": {
+		"_postman_id": "c8127436-4548-448b-8fff-ac7f7f5db838",
+		"name": "Readcommend",
+		"description": "Readcommend is a book recommendation web app for the true book aficionados and disavowed\nhuman-size bookworms. It allows to search for book recommendations with best ratings, based\non different search criteria.\n",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Gets all authors",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/authors",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"authors"
+					]
+				},
+				"description": "Gets list of all authors. As this list would typically be quite huge in a\nreal production dataset, an important improvement would be to dynamically\nquery authors by first few characters as user is typing.\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Gets all genres",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/genres",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"genres"
+					]
+				},
+				"description": "Gets list of all genres.\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Gets all book size ranges",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/sizes",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"sizes"
+					]
+				},
+				"description": "Gets list of all book size ranges."
+			},
+			"response": []
+		},
+		{
+			"name": "Gets all eras",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/eras",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"eras"
+					]
+				},
+				"description": "Gets list of all eras (ranges of publishing years). Minimum\nand maximum years are both inclusive and either of them\nmay be omitted for an unbounded range in either direction.\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Gets filtered books success",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/books?min-pages=100&max-pages=8613&min-year=2010&max-year=2010&limit=5000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"books"
+					],
+					"query": [
+						{
+							"key": "min-pages",
+							"value": "100",
+							"description": "Inclusive minimum number of pages."
+						},
+						{
+							"key": "max-pages",
+							"value": "8613",
+							"description": "Inclusive maximum number of pages."
+						},
+						{
+							"key": "min-year",
+							"value": "2010",
+							"description": "Inclusive minimum publishing year.\n"
+						},
+						{
+							"key": "max-year",
+							"value": "2010",
+							"description": "Inclusive maximum publishing year.\n"
+						},
+						{
+							"key": "limit",
+							"value": "5000",
+							"description": "Inclusive maximum number of results to return (defaults to all results).\n"
+						}
+					]
+				},
+				"description": "Gets list of books, ordered by rank from best to worst rated, with optional filters. Multiple\nfilters can be specified: author(s), genre(s), min/max number of pages, min/max published date,\nas well as maximum number of results.\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Gets filtered books error",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/books?min-year=-2010&max-year=2010&limit=60",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"books"
+					],
+					"query": [
+						{
+							"key": "min-year",
+							"value": "-2010",
+							"description": "Inclusive minimum publishing year.\n"
+						},
+						{
+							"key": "max-year",
+							"value": "2010",
+							"description": "Inclusive maximum publishing year.\n"
+						},
+						{
+							"key": "limit",
+							"value": "60",
+							"description": "Inclusive maximum number of results to return (defaults to all results).\n"
+						}
+					]
+				},
+				"description": "Gets list of books, ordered by rank from best to worst rated, with optional filters. Multiple\nfilters can be specified: author(s), genre(s), min/max number of pages, min/max published date,\nas well as maximum number of results.\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Books",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/books",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"books"
+					]
+				},
+				"description": "Get list of all books."
+			},
+			"response": []
+		},
+		{
+			"name": "Get Filtered Books (Valid Parameters)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/books?genres=2&min-pages=100&max-pages=900&min-year=2000&max-year=2020&limit=10",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"books"
+					],
+					"query": [
+						{
+							"key": "genres",
+							"value": "2"
+						},
+						{
+							"key": "min-pages",
+							"value": "100"
+						},
+						{
+							"key": "max-pages",
+							"value": "900"
+						},
+						{
+							"key": "min-year",
+							"value": "2000"
+						},
+						{
+							"key": "max-year",
+							"value": "2020"
+						},
+						{
+							"key": "limit",
+							"value": "10"
+						}
+					]
+				},
+				"description": "Get filtered list of books with valid parameters."
+			},
+			"response": []
+		},
+		{
+			"name": "Get Filtered Books (Invalid Parameters)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/books?invalid-param=abc",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"books"
+					],
+					"query": [
+						{
+							"key": "invalid-param",
+							"value": "abc"
+						}
+					]
+				},
+				"description": "Get filtered list of books with invalid parameters."
+			},
+			"response": []
+		},
+		{
+			"name": "Get Filtered Books (No Results)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/books?authors=3&genres=4&min-pages=500&max-pages=700&min-year=2025&max-year=2030&limit=5",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"books"
+					],
+					"query": [
+						{
+							"key": "authors",
+							"value": "3"
+						},
+						{
+							"key": "genres",
+							"value": "4"
+						},
+						{
+							"key": "min-pages",
+							"value": "500"
+						},
+						{
+							"key": "max-pages",
+							"value": "700"
+						},
+						{
+							"key": "min-year",
+							"value": "2025"
+						},
+						{
+							"key": "max-year",
+							"value": "2030"
+						},
+						{
+							"key": "limit",
+							"value": "5"
+						}
+					]
+				},
+				"description": "Get filtered list of books with no results."
+			},
+			"response": []
+		},
+		{
+			"name": "Get Filtered Books (Invalid Min/Max Pages)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/books?min-pages=300&max-pages=100",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"books"
+					],
+					"query": [
+						{
+							"key": "min-pages",
+							"value": "300"
+						},
+						{
+							"key": "max-pages",
+							"value": "100"
+						}
+					]
+				},
+				"description": "Get filtered list of books with invalid min/max pages."
+			},
+			"response": []
+		},
+		{
+			"name": "Get Filtered Books (Invalid Min/Max Year)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/books?min-year=2022&max-year=2020",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"books"
+					],
+					"query": [
+						{
+							"key": "min-year",
+							"value": "2022"
+						},
+						{
+							"key": "max-year",
+							"value": "2020"
+						}
+					]
+				},
+				"description": "Get filtered list of books with invalid min/max year."
+			},
+			"response": []
+		},
+		{
+			"name": "Get Filtered Books (Invalid Limit)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/books?limit=0",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"books"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "0"
+						}
+					]
+				},
+				"description": "Get filtered list of books with invalid limit."
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:5001/api/v1",
+			"type": "string"
+		}
+	]
+}

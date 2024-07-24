@@ -1,0 +1,11 @@
+server_port: 5001
+
+db_username: postgres
+db_password: password123
+db_hostname: postgresql
+db_port: 5432
+db_database_name: readcommend
+db_ssl_mode: disable
+
+cors_allowed_origins:
+  - http://localhost:8080
