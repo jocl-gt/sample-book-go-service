@@ -1,8 +1,7 @@
 {
 	"info": {
 		"_postman_id": "c8127436-4548-448b-8fff-ac7f7f5db838",
-		"name": "Readcommend",
-		"description": "Readcommend is a book recommendation web app for the true book aficionados and disavowed\nhuman-size bookworms. It allows to search for book recommendations with best ratings, based\non different search criteria.\n",
+		"name": "Book search",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -20,7 +19,7 @@
 						"authors"
 					]
 				},
-				"description": "Gets list of all authors. As this list would typically be quite huge in a\nreal production dataset, an important improvement would be to dynamically\nquery authors by first few characters as user is typing.\n"
+				"description": "Gets list of all authors.\n"
 			},
 			"response": []
 		},
@@ -74,7 +73,7 @@
 						"eras"
 					]
 				},
-				"description": "Gets list of all eras (ranges of publishing years). Minimum\nand maximum years are both inclusive and either of them\nmay be omitted for an unbounded range in either direction.\n"
+				"description": "Gets list of all eras.\n"
 			},
 			"response": []
 		},
@@ -119,7 +118,7 @@
 						}
 					]
 				},
-				"description": "Gets list of books, ordered by rank from best to worst rated, with optional filters. Multiple\nfilters can be specified: author(s), genre(s), min/max number of pages, min/max published date,\nas well as maximum number of results.\n"
+				"description": "Gets list of books.\n"
 			},
 			"response": []
 		},
@@ -154,7 +153,7 @@
 						}
 					]
 				},
-				"description": "Gets list of books, ordered by rank from best to worst rated, with optional filters. Multiple\nfilters can be specified: author(s), genre(s), min/max number of pages, min/max published date,\nas well as maximum number of results.\n"
+				"description": "Gets list of books.\n"
 			},
 			"response": []
 		},
